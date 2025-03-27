@@ -1,66 +1,114 @@
 <template>
-  <div class="min-h-screen bg-gradient-to-r from-blue-100 to-purple-200">
-    <!-- Navbar -->
-    <nav class="bg-white shadow-md py-4 px-6 flex justify-between items-center sticky top-0 z-50">
-      <!--<div class="text-2xl font-bold text-blue-600">LOGO</div>-->
-      <div>
-        <img src="/logo.jpeg" alt="Logo" class="w-48 h-16" />
-      </div>
-      <ul class="flex space-x-6 text-lg font-medium">
-        <li>Welcome to the begining of your Transformation</li>
-      </ul>
-    </nav>
-    <nav class="py-4 px-6 flex justify-between items-center sticky top-0 z-50">
-      <!--<div class="text-2xl font-bold text-blue-600">LOGO</div>-->
-      <div>
-        
-      </div>
-      <ul class="flex space-x-6 text-lg font-medium items-center">
-        <li><a href="#" class="text-gray-700 hover:text-blue-500 transition">Home</a></li>
-        <li class="text-4xl font-thin">|</li>
-        <li><a href="#" class="text-gray-700 hover:text-blue-500 transition">Courses</a></li>
-        <li class="text-4xl font-thin">|</li>
-        <li><a href="#" class="text-gray-700 hover:text-blue-500 transition">Articles</a></li>
-        <li class="text-4xl font-thin">|</li>
-        <li><a href="#" class="text-gray-700 hover:text-blue-500 transition">About</a></li>
-        <li class="text-4xl font-thin">|</li>
-        <li>
-          <button class="bg-blue-500 text-white px-5 py-2 rounded-lg shadow-lg hover:bg-blue-600 transition">Donate</button>
-        </li>
-        <li class="text-4xl font-thin">|</li>
-        <li>
-          <button class="bg-blue-500 text-white px-5 py-2 rounded-lg shadow-lg hover:bg-blue-600 transition">Login / Sign up</button>
-        </li>
-      </ul>
-    </nav>
-
-    <!-- Main Content -->
-    <div class="container mx-auto px-6 py-10 grid grid-cols-12 gap-6">
-      <!-- Sidebar -->
-      <aside class="col-span-3 bg-white shadow-lg p-6 rounded-lg text-center">
-        <h2 class="font-semibold text-xl text-blue-700">Krsna and Arjuna</h2>
-      </aside>
-
-      <!-- Main Section -->
-      <section class="col-span-6 bg-white shadow-lg p-8 rounded-lg text-center">
-        <h1 class="text-3xl font-bold text-gray-800 mb-4">Welcome to the Beginning of Your Transformation</h1>
-        <p class="text-lg text-gray-600">Gita's timeless wisdom through the eyes of great minds</p>
-      </section>
-
-      <!-- Sidebar Right -->
-      <aside class="col-span-3 bg-white shadow-lg p-6 rounded-lg text-center">
-        <h2 class="font-semibold text-xl text-blue-700">Sanjay and Dhritrastra</h2>
-      </aside>
-    </div>
-
-    <!-- Bottom Section -->
-    <div class="container mx-auto px-6 py-10 flex justify-center">
-      <div class="bg-white shadow-lg p-8 rounded-lg text-center w-1/2">
-        <h2 class="font-semibold text-xl text-blue-700">Saying & Discussion</h2>
-      </div>
-    </div>
+  <Navbar />
+  <div class="bg-gradient-to-r from-blue-100 to-purple-200">
+    <NavLinks v-model="currentPage" />
   </div>
+  <div class="min-h-screen bg-gradient-to-r from-blue-100 to-purple-200" v-if="currentPage==='home'">
+    
+    <div class="relative flex justify-center items-start w-full px-2 md:px-12 lg:px-5 gap-6 pt-4" >
+      <!-- Left Sidebar -->
+      <div class="flex-1 max-w-[450px]">
+        <Sidebar title="Krsna and Arjuna" image="KrsnaArjun.jpg" txt="A profound and sacred moment from the great epic, the Mahabharata." />
+      </div>
+      
+
+      <!-- Main Content -->
+      <div class="flex-[16] w-full">
+        <MainContent />
+      </div>
+
+      <!-- Right Sidebar -->
+      <div class="flex-1 max-w-[450px]" >
+        <Sidebar title="Sanjay and Dhritrastra" image="Dhrtarastra&Sanjay.jpg" txt="Through Sanjay’s words, the blind King Dhritarashtra envisions the Mahabharata." />
+      </div>
+
+
+      
+    </div>
+
+
+
+
+
+    <BottomSection />
+  </div>
+  <AboutUs v-if="currentPage==='aboutus'" />
 </template>
+
+<script setup>
+import Navbar from "./components/Navbar.vue";
+import Sidebar from "./components/Sidebar.vue";
+import MainContent from "./components/MainContent.vue";
+import BottomSection from "./components/BottomSection.vue";
+import AboutUs from "./components/AboutUs.vue";
+import { getFirestore, doc, getDoc, collection, getDocs } from "firebase/firestore";
+import db from './src/firebase/init.js'; // Ensure this file properly initializes Firebase
+import NavLinks from "./components/NavLinks.vue";
+
+import { ref, onMounted } from 'vue';
+
+const items = ref([]);
+const leftImages = ref([]);
+
+const currentPage=ref("home");
+
+const fetchData = async () => {
+  try {
+    const imageData = ref({});
+
+    // imageData.value={};
+    // const imagesCollectionRef = collection(db, "gitaUnlocked", "home", "images");
+    const docRef = doc(db, "gitaUnlocked", "home", "images", "left_side_images");
+    const docSnap = await getDoc(docRef);
+
+    // console.log(docRef);
+    // const querySnapshot = await getDocs(imagesCollectionRef); 
+    // const docSnap = await getDoc(docRef);
+    // if (querySnapshot.exists()) {
+    //   //leftImages.value = ; // Store the document data
+    //   console.log("Document Data:", querySnapshot.data());
+    // } else {
+    //   console.log("No such document!");
+    // }
+    if (docSnap.exists()) {
+      // console.log("Files in left_side_images:", docSnap.data());  
+      const data = docSnap.data();
+      leftImages.value = Object.values(data);
+    } else {
+      console.log("No such document!");
+    }
+
+    // querySnapshot.forEach((doc) => {  
+
+    //     console.log(`Document ID: ${doc.id}, Image URL: ${doc.data().left_side_images}`);  
+    // }); 
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+};
+
+onMounted(fetchData);
+
+// async function fetchContent() {
+//   try {
+//     const docRef = doc(db, "gitaUnlocked", "home"); // Use "home" instead of "content"
+//     const docSnap = await getDoc(docRef);
+
+//     if (docSnap.exists()) {
+//       console.log("Document data:", docSnap.data());
+//       console.log("Content:", docSnap.data().content); // Access the 'content' field
+//     } else {
+//       console.log("No such document!");
+//     }
+//   } catch (error) {
+//     console.error("Error fetching document:", error);
+//   }
+// }
+
+// fetchContent();
+</script>
+
+
 
 <style scoped>
 nav a {
