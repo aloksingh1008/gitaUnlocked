@@ -1,9 +1,6 @@
 <template>
-    <nav class="fixed top-0 left-0 w-full bg-white shadow-md py-5 px-6 flex flex-col z-50">
-      <div class="flex justify-between items-center w-full">
-        <img src="/logo.jpeg" alt="Logo" class="w-48 h-14" />
-        <span class="text-lg font-medium text-gray-700">Welcome to the beginning of your Transformation</span>
-      </div>
+    <nav class="fixed top-0 left-0 w-full justify-center shadow-md py-2 tracking-[0.3em] px-6 flex z-50 h-15 font-black text-xl bg-gradient-to-r from-[#FF7A00] via-[#D61C75] to-[#7A10FF] text-white">
+     JOIN OUR DAILY LIVE CLASS - EVERY DAY AT 7 PM
       
     </nav>
   </template>
