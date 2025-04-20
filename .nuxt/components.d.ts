@@ -16,12 +16,21 @@ interface _GlobalComponents {
     'BottomSection': typeof import("../components/BottomSection.vue")['default']
     'Card': typeof import("../components/Card.vue")['default']
     'ConnectWithUsComponent': typeof import("../components/ConnectWithUsComponent.vue")['default']
+    'CoursesInHomePage': typeof import("../components/CoursesInHomePage.vue")['default']
+    'FindSolutionsCards': typeof import("../components/FindSolutionsCards.vue")['default']
+    'FooterInHomePage': typeof import("../components/FooterInHomePage.vue")['default']
+    'HeadlineComp': typeof import("../components/HeadlineComp.vue")['default']
+    'HomePageComponents': typeof import("../components/HomePageComponents.vue")['default']
+    'LandingcomponentInHomePage': typeof import("../components/LandingcomponentInHomePage.vue")['default']
     'MainContent': typeof import("../components/MainContent.vue")['default']
+    'NavBarFooterInHomePage': typeof import("../components/NavBarFooterInHomePage.vue")['default']
     'NavLinks': typeof import("../components/NavLinks.vue")['default']
     'Navbar': typeof import("../components/Navbar.vue")['default']
     'NewCard': typeof import("../components/NewCard.vue")['default']
+    'PersonsSayAboutGita': typeof import("../components/PersonsSayAboutGita.vue")['default']
     'Sidebar': typeof import("../components/Sidebar.vue")['default']
     'VideoPlayer': typeof import("../components/VideoPlayer.vue")['default']
+    'WhysectionInHomePage': typeof import("../components/WhysectionInHomePage.vue")['default']
     'NuxtWelcome': typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']
     'NuxtLayout': typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']
     'NuxtErrorBoundary': typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default']
@@ -51,12 +60,21 @@ interface _GlobalComponents {
     'LazyBottomSection': LazyComponent<typeof import("../components/BottomSection.vue")['default']>
     'LazyCard': LazyComponent<typeof import("../components/Card.vue")['default']>
     'LazyConnectWithUsComponent': LazyComponent<typeof import("../components/ConnectWithUsComponent.vue")['default']>
+    'LazyCoursesInHomePage': LazyComponent<typeof import("../components/CoursesInHomePage.vue")['default']>
+    'LazyFindSolutionsCards': LazyComponent<typeof import("../components/FindSolutionsCards.vue")['default']>
+    'LazyFooterInHomePage': LazyComponent<typeof import("../components/FooterInHomePage.vue")['default']>
+    'LazyHeadlineComp': LazyComponent<typeof import("../components/HeadlineComp.vue")['default']>
+    'LazyHomePageComponents': LazyComponent<typeof import("../components/HomePageComponents.vue")['default']>
+    'LazyLandingcomponentInHomePage': LazyComponent<typeof import("../components/LandingcomponentInHomePage.vue")['default']>
     'LazyMainContent': LazyComponent<typeof import("../components/MainContent.vue")['default']>
+    'LazyNavBarFooterInHomePage': LazyComponent<typeof import("../components/NavBarFooterInHomePage.vue")['default']>
     'LazyNavLinks': LazyComponent<typeof import("../components/NavLinks.vue")['default']>
     'LazyNavbar': LazyComponent<typeof import("../components/Navbar.vue")['default']>
     'LazyNewCard': LazyComponent<typeof import("../components/NewCard.vue")['default']>
+    'LazyPersonsSayAboutGita': LazyComponent<typeof import("../components/PersonsSayAboutGita.vue")['default']>
     'LazySidebar': LazyComponent<typeof import("../components/Sidebar.vue")['default']>
     'LazyVideoPlayer': LazyComponent<typeof import("../components/VideoPlayer.vue")['default']>
+    'LazyWhysectionInHomePage': LazyComponent<typeof import("../components/WhysectionInHomePage.vue")['default']>
     'LazyNuxtWelcome': LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']>
     'LazyNuxtLayout': LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']>
     'LazyNuxtErrorBoundary': LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default']>
@@ -92,12 +110,21 @@ export const AboutUs: typeof import("../components/AboutUs.vue")['default']
 export const BottomSection: typeof import("../components/BottomSection.vue")['default']
 export const Card: typeof import("../components/Card.vue")['default']
 export const ConnectWithUsComponent: typeof import("../components/ConnectWithUsComponent.vue")['default']
+export const CoursesInHomePage: typeof import("../components/CoursesInHomePage.vue")['default']
+export const FindSolutionsCards: typeof import("../components/FindSolutionsCards.vue")['default']
+export const FooterInHomePage: typeof import("../components/FooterInHomePage.vue")['default']
+export const HeadlineComp: typeof import("../components/HeadlineComp.vue")['default']
+export const HomePageComponents: typeof import("../components/HomePageComponents.vue")['default']
+export const LandingcomponentInHomePage: typeof import("../components/LandingcomponentInHomePage.vue")['default']
 export const MainContent: typeof import("../components/MainContent.vue")['default']
+export const NavBarFooterInHomePage: typeof import("../components/NavBarFooterInHomePage.vue")['default']
 export const NavLinks: typeof import("../components/NavLinks.vue")['default']
 export const Navbar: typeof import("../components/Navbar.vue")['default']
 export const NewCard: typeof import("../components/NewCard.vue")['default']
+export const PersonsSayAboutGita: typeof import("../components/PersonsSayAboutGita.vue")['default']
 export const Sidebar: typeof import("../components/Sidebar.vue")['default']
 export const VideoPlayer: typeof import("../components/VideoPlayer.vue")['default']
+export const WhysectionInHomePage: typeof import("../components/WhysectionInHomePage.vue")['default']
 export const NuxtWelcome: typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']
 export const NuxtLayout: typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']
 export const NuxtErrorBoundary: typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default']
@@ -127,12 +154,21 @@ export const LazyAboutUs: LazyComponent<typeof import("../components/AboutUs.vue
 export const LazyBottomSection: LazyComponent<typeof import("../components/BottomSection.vue")['default']>
 export const LazyCard: LazyComponent<typeof import("../components/Card.vue")['default']>
 export const LazyConnectWithUsComponent: LazyComponent<typeof import("../components/ConnectWithUsComponent.vue")['default']>
+export const LazyCoursesInHomePage: LazyComponent<typeof import("../components/CoursesInHomePage.vue")['default']>
+export const LazyFindSolutionsCards: LazyComponent<typeof import("../components/FindSolutionsCards.vue")['default']>
+export const LazyFooterInHomePage: LazyComponent<typeof import("../components/FooterInHomePage.vue")['default']>
+export const LazyHeadlineComp: LazyComponent<typeof import("../components/HeadlineComp.vue")['default']>
+export const LazyHomePageComponents: LazyComponent<typeof import("../components/HomePageComponents.vue")['default']>
+export const LazyLandingcomponentInHomePage: LazyComponent<typeof import("../components/LandingcomponentInHomePage.vue")['default']>
 export const LazyMainContent: LazyComponent<typeof import("../components/MainContent.vue")['default']>
+export const LazyNavBarFooterInHomePage: LazyComponent<typeof import("../components/NavBarFooterInHomePage.vue")['default']>
 export const LazyNavLinks: LazyComponent<typeof import("../components/NavLinks.vue")['default']>
 export const LazyNavbar: LazyComponent<typeof import("../components/Navbar.vue")['default']>
 export const LazyNewCard: LazyComponent<typeof import("../components/NewCard.vue")['default']>
+export const LazyPersonsSayAboutGita: LazyComponent<typeof import("../components/PersonsSayAboutGita.vue")['default']>
 export const LazySidebar: LazyComponent<typeof import("../components/Sidebar.vue")['default']>
 export const LazyVideoPlayer: LazyComponent<typeof import("../components/VideoPlayer.vue")['default']>
+export const LazyWhysectionInHomePage: LazyComponent<typeof import("../components/WhysectionInHomePage.vue")['default']>
 export const LazyNuxtWelcome: LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']>
 export const LazyNuxtLayout: LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']>
 export const LazyNuxtErrorBoundary: LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default']>

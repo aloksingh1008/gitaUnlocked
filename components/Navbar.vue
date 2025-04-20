@@ -4,8 +4,5 @@
       
     </nav>
   </template>
-  
-  <script>
-  
-  </script>
+
   
