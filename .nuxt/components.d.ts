@@ -17,6 +17,7 @@ interface _GlobalComponents {
     'Card': typeof import("../components/Card.vue")['default']
     'ConnectWithUsComponent': typeof import("../components/ConnectWithUsComponent.vue")['default']
     'CoursesInHomePage': typeof import("../components/CoursesInHomePage.vue")['default']
+    'DefaultFallback': typeof import("../components/DefaultFallback.vue")['default']
     'FindSolutionsCards': typeof import("../components/FindSolutionsCards.vue")['default']
     'FooterInHomePage': typeof import("../components/FooterInHomePage.vue")['default']
     'HeadlineComp': typeof import("../components/HeadlineComp.vue")['default']
@@ -28,6 +29,7 @@ interface _GlobalComponents {
     'NavLinks': typeof import("../components/NavLinks.vue")['default']
     'Navbar': typeof import("../components/Navbar.vue")['default']
     'NewCard': typeof import("../components/NewCard.vue")['default']
+    'Overthinking': typeof import("../components/Overthinking.vue")['default']
     'PersonsSayAboutGita': typeof import("../components/PersonsSayAboutGita.vue")['default']
     'Sidebar': typeof import("../components/Sidebar.vue")['default']
     'VideoPlayer': typeof import("../components/VideoPlayer.vue")['default']
@@ -62,6 +64,7 @@ interface _GlobalComponents {
     'LazyCard': LazyComponent<typeof import("../components/Card.vue")['default']>
     'LazyConnectWithUsComponent': LazyComponent<typeof import("../components/ConnectWithUsComponent.vue")['default']>
     'LazyCoursesInHomePage': LazyComponent<typeof import("../components/CoursesInHomePage.vue")['default']>
+    'LazyDefaultFallback': LazyComponent<typeof import("../components/DefaultFallback.vue")['default']>
     'LazyFindSolutionsCards': LazyComponent<typeof import("../components/FindSolutionsCards.vue")['default']>
     'LazyFooterInHomePage': LazyComponent<typeof import("../components/FooterInHomePage.vue")['default']>
     'LazyHeadlineComp': LazyComponent<typeof import("../components/HeadlineComp.vue")['default']>
@@ -73,6 +76,7 @@ interface _GlobalComponents {
     'LazyNavLinks': LazyComponent<typeof import("../components/NavLinks.vue")['default']>
     'LazyNavbar': LazyComponent<typeof import("../components/Navbar.vue")['default']>
     'LazyNewCard': LazyComponent<typeof import("../components/NewCard.vue")['default']>
+    'LazyOverthinking': LazyComponent<typeof import("../components/Overthinking.vue")['default']>
     'LazyPersonsSayAboutGita': LazyComponent<typeof import("../components/PersonsSayAboutGita.vue")['default']>
     'LazySidebar': LazyComponent<typeof import("../components/Sidebar.vue")['default']>
     'LazyVideoPlayer': LazyComponent<typeof import("../components/VideoPlayer.vue")['default']>
@@ -113,6 +117,7 @@ export const BottomSection: typeof import("../components/BottomSection.vue")['de
 export const Card: typeof import("../components/Card.vue")['default']
 export const ConnectWithUsComponent: typeof import("../components/ConnectWithUsComponent.vue")['default']
 export const CoursesInHomePage: typeof import("../components/CoursesInHomePage.vue")['default']
+export const DefaultFallback: typeof import("../components/DefaultFallback.vue")['default']
 export const FindSolutionsCards: typeof import("../components/FindSolutionsCards.vue")['default']
 export const FooterInHomePage: typeof import("../components/FooterInHomePage.vue")['default']
 export const HeadlineComp: typeof import("../components/HeadlineComp.vue")['default']
@@ -124,6 +129,7 @@ export const NavBarFooterInHomePage: typeof import("../components/NavBarFooterIn
 export const NavLinks: typeof import("../components/NavLinks.vue")['default']
 export const Navbar: typeof import("../components/Navbar.vue")['default']
 export const NewCard: typeof import("../components/NewCard.vue")['default']
+export const Overthinking: typeof import("../components/Overthinking.vue")['default']
 export const PersonsSayAboutGita: typeof import("../components/PersonsSayAboutGita.vue")['default']
 export const Sidebar: typeof import("../components/Sidebar.vue")['default']
 export const VideoPlayer: typeof import("../components/VideoPlayer.vue")['default']
@@ -158,6 +164,7 @@ export const LazyBottomSection: LazyComponent<typeof import("../components/Botto
 export const LazyCard: LazyComponent<typeof import("../components/Card.vue")['default']>
 export const LazyConnectWithUsComponent: LazyComponent<typeof import("../components/ConnectWithUsComponent.vue")['default']>
 export const LazyCoursesInHomePage: LazyComponent<typeof import("../components/CoursesInHomePage.vue")['default']>
+export const LazyDefaultFallback: LazyComponent<typeof import("../components/DefaultFallback.vue")['default']>
 export const LazyFindSolutionsCards: LazyComponent<typeof import("../components/FindSolutionsCards.vue")['default']>
 export const LazyFooterInHomePage: LazyComponent<typeof import("../components/FooterInHomePage.vue")['default']>
 export const LazyHeadlineComp: LazyComponent<typeof import("../components/HeadlineComp.vue")['default']>
@@ -169,6 +176,7 @@ export const LazyNavBarFooterInHomePage: LazyComponent<typeof import("../compone
 export const LazyNavLinks: LazyComponent<typeof import("../components/NavLinks.vue")['default']>
 export const LazyNavbar: LazyComponent<typeof import("../components/Navbar.vue")['default']>
 export const LazyNewCard: LazyComponent<typeof import("../components/NewCard.vue")['default']>
+export const LazyOverthinking: LazyComponent<typeof import("../components/Overthinking.vue")['default']>
 export const LazyPersonsSayAboutGita: LazyComponent<typeof import("../components/PersonsSayAboutGita.vue")['default']>
 export const LazySidebar: LazyComponent<typeof import("../components/Sidebar.vue")['default']>
 export const LazyVideoPlayer: LazyComponent<typeof import("../components/VideoPlayer.vue")['default']>

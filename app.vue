@@ -10,8 +10,9 @@
   <HomePageComponents v-if="toShowComponent.currentPage === 'home'" />
 
   <div v-if="toShowComponent.currentPage === 'findSolutionFor'" class="mx-16 px-4">
-    <span v-html="findSolutionForItemPage"></span>
-  </div>
+    d,jsfhblkajhbfb
+  <component :is="dynamicComponent" />
+</div>
 
   <AboutUs v-if="toShowComponent.currentPage === 'aboutus'" />
 </template>
@@ -37,41 +38,67 @@ const toShowComponent = ref({
 // for each subgroup in findsolutionfor -- it will store html for each subgroup and render if by updating the  valuye from the firebase
 let findSolutionForItemPage = ref("");
 
-// it get triggered whenever there is change on click on any heading in the navlink.vue
-const updateComponent = async(newData) => {
-  console.log(newData);
+const fallbackComponent = () => import('./components/DefaultFallback.vue');
+
+const dynamicComponent = shallowRef(null); // This will hold the imported .vue component
+
+const updateComponent = async (newData) => {
+  toShowComponent.value = newData;
+
   if (newData.currentPage === "findSolutionFor") {
-    findSolutionForItemPage.value= await fetchData(newData.selectedSolutionFor);
-    // console.log(await fetchData(newData.selectedSolutionFor));
-  }
-  else {
-    findSolutionForItemPage.value = "";
+    const selected = newData.selectedSolutionFor;
+
+    try {
+      // Try importing the selected component
+      const module = await import(`./components/${selected}.vue`);
+      dynamicComponent.value = module.default;
+    } catch (error) {
+      console.warn(`Component '${selected}.vue' not found. Loading fallback.`, error);
+
+      // Fallback component
+      const fallbackModule = await fallbackComponent();
+      dynamicComponent.value = fallbackModule.default;
+    }
+  } else {
+    dynamicComponent.value = null;
   }
 };
+
+// it get triggered whenever there is change on click on any heading in the navlink.vue
+// const updateComponent = async(newData) => {
+//   console.log(newData);
+//   if (newData.currentPage === "findSolutionFor") {
+//     // show component dynamically based on newData.selectedSolutionFor
+    
+//   }
+//   else {
+//     // findSolutionForItemPage.value = "";
+//   }
+// };
 
 // fetches the html for each subgroup in the FindSolutionFor
-const fetchData = async (title) => {
-  try {
-    const imageData = ref({});
+// const fetchData = async (title) => {
+//   try {
+//     const imageData = ref({});
 
-    const colRef = collection(db, "gitaUnlocked", "home", "findSolutionFor");
+//     const colRef = collection(db, "gitaUnlocked", "home", "findSolutionFor");
 
-    const querySnapshot = await getDocs(colRef);
+//     const querySnapshot = await getDocs(colRef);
 
-    for (const doc of querySnapshot.docs) {
-      const data = doc.data();
-      if (data.title === title) {
-        console.log("matched");
-        console.log(data);
-        return data.content;
-      }
-    }
-    return `<h2 class="text-3xl font-extrabold text-[#FF7A00] uppercase">No data for selected item : ${title}</h2>`
-  } catch (error) {
-    console.error("Error fetching data:", error);
-  }
+//     for (const doc of querySnapshot.docs) {
+//       const data = doc.data();
+//       if (data.title === title) {
+//         console.log("matched");
+//         console.log(data);
+//         return data.content;
+//       }
+//     }
+//     return `<h2 class="text-3xl font-extrabold text-[#FF7A00] uppercase">No data for selected item : ${title}</h2>`
+//   } catch (error) {
+//     console.error("Error fetching data:", error);
+//   }
 
-};
+// };
 
 // onMounted(fetchData);
 </script>
