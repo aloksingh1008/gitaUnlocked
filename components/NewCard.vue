@@ -1,7 +1,9 @@
 <template>
     <div class="relative bg-[#efe9f9] rounded-xl p-4 w-[360px] flex flex-col justify-between shadow-md">
       <!-- Image/Placeholder Area -->
-      <div class="bg-white rounded-lg h-60 mb-4"></div>
+       <img :src="image" alt="">
+      <div class="bg-white rounded-lg  mb-4"></div>
+      
   
       <!-- Text Area -->
        <div>
@@ -26,7 +28,7 @@
   <script>
   export default {
     name: 'Card',
-    props: ['title', 'description']
+    props: ['title', 'description', 'image']
   };
   </script>
   

@@ -22,6 +22,7 @@ interface _GlobalComponents {
     'HeadlineComp': typeof import("../components/HeadlineComp.vue")['default']
     'HomePageComponents': typeof import("../components/HomePageComponents.vue")['default']
     'LandingcomponentInHomePage': typeof import("../components/LandingcomponentInHomePage.vue")['default']
+    'LandingcomponentInHomePage2': typeof import("../components/LandingcomponentInHomePage2.vue")['default']
     'MainContent': typeof import("../components/MainContent.vue")['default']
     'NavBarFooterInHomePage': typeof import("../components/NavBarFooterInHomePage.vue")['default']
     'NavLinks': typeof import("../components/NavLinks.vue")['default']
@@ -66,6 +67,7 @@ interface _GlobalComponents {
     'LazyHeadlineComp': LazyComponent<typeof import("../components/HeadlineComp.vue")['default']>
     'LazyHomePageComponents': LazyComponent<typeof import("../components/HomePageComponents.vue")['default']>
     'LazyLandingcomponentInHomePage': LazyComponent<typeof import("../components/LandingcomponentInHomePage.vue")['default']>
+    'LazyLandingcomponentInHomePage2': LazyComponent<typeof import("../components/LandingcomponentInHomePage2.vue")['default']>
     'LazyMainContent': LazyComponent<typeof import("../components/MainContent.vue")['default']>
     'LazyNavBarFooterInHomePage': LazyComponent<typeof import("../components/NavBarFooterInHomePage.vue")['default']>
     'LazyNavLinks': LazyComponent<typeof import("../components/NavLinks.vue")['default']>
@@ -116,6 +118,7 @@ export const FooterInHomePage: typeof import("../components/FooterInHomePage.vue
 export const HeadlineComp: typeof import("../components/HeadlineComp.vue")['default']
 export const HomePageComponents: typeof import("../components/HomePageComponents.vue")['default']
 export const LandingcomponentInHomePage: typeof import("../components/LandingcomponentInHomePage.vue")['default']
+export const LandingcomponentInHomePage2: typeof import("../components/LandingcomponentInHomePage2.vue")['default']
 export const MainContent: typeof import("../components/MainContent.vue")['default']
 export const NavBarFooterInHomePage: typeof import("../components/NavBarFooterInHomePage.vue")['default']
 export const NavLinks: typeof import("../components/NavLinks.vue")['default']
@@ -160,6 +163,7 @@ export const LazyFooterInHomePage: LazyComponent<typeof import("../components/Fo
 export const LazyHeadlineComp: LazyComponent<typeof import("../components/HeadlineComp.vue")['default']>
 export const LazyHomePageComponents: LazyComponent<typeof import("../components/HomePageComponents.vue")['default']>
 export const LazyLandingcomponentInHomePage: LazyComponent<typeof import("../components/LandingcomponentInHomePage.vue")['default']>
+export const LazyLandingcomponentInHomePage2: LazyComponent<typeof import("../components/LandingcomponentInHomePage2.vue")['default']>
 export const LazyMainContent: LazyComponent<typeof import("../components/MainContent.vue")['default']>
 export const LazyNavBarFooterInHomePage: LazyComponent<typeof import("../components/NavBarFooterInHomePage.vue")['default']>
 export const LazyNavLinks: LazyComponent<typeof import("../components/NavLinks.vue")['default']>

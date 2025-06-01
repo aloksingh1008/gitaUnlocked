@@ -25,7 +25,7 @@
       x: direction === 'right' ? -100 : 100,
       transition: { duration: 1000, ease: 'easeInOut' }
     }" class="transition-transform">
-          <NewCard :title="card.title" :description="card.description" />
+          <NewCard :title="card.title" :description="card.description" :image="card.image" />
         </Motion>
       </div>
 
@@ -42,11 +42,11 @@ import Card from "./Card.vue";
 import NewCard from "./NewCard.vue";
 
 const cards = ref([
-  { title: 'Anxiety', description: 'We will find in more details read more..' },
-  { title: 'Depression', description: 'Find helpful guidance and support.' },
-  { title: 'Stress', description: 'Learn how to manage stress effectively.' },
-  { title: 'Burnout', description: 'Signs and solutions for burnout.' },
-  { title: 'Insomnia', description: 'Sleep better with these tips.' },
+  { title: 'Overthinking', description: 'The Hidden Enemy That Destorys Peace.' , image:"/2.svg"},
+  { title: 'Anger', description: 'A Fire -- When uncontrolled, it burns who holds it.', image:"/1.svg" },
+  { title: 'Loneliness', description: 'When Hearts Drifts furthers Than Galaxies', image:"/3.svg" }
+  // { title: 'Burnout', description: 'Signs and solutions for burnout.', image:"/1.svg" },
+  // { title: 'Insomnia', description: 'Sleep better with these tips.', image:"/1.svg" },
 ])
 
 const currentIndex = ref(0)
