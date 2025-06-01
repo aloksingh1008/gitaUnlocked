@@ -10,7 +10,6 @@
   <HomePageComponents v-if="toShowComponent.currentPage === 'home'" />
 
   <div v-if="toShowComponent.currentPage === 'findSolutionFor'" class="mx-16 px-4">
-    d,jsfhblkajhbfb
   <component :is="dynamicComponent" />
 </div>
 
