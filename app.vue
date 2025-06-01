@@ -15,6 +15,7 @@
 </div>
 
   <AboutUs v-if="toShowComponent.currentPage === 'aboutus'" />
+  <FooterInHomePage />
 </template>
 
 <script setup>
@@ -25,9 +26,36 @@ import { getFirestore, doc, getDoc, collection, getDocs } from "firebase/firesto
 import db from './src/firebase/init.js'; // Ensure this file properly initializes Firebase
 import NavLinks from "./components/NavLinks.vue";
 import HomePageComponents from "./components/HomePageComponents.vue";
+import FooterInHomePage from "./components/FooterInHomePage.vue";
 
 
 import { ref } from 'vue';
+
+import { shallowRef, h } from 'vue';
+
+const dynamicComponent = shallowRef(null);
+
+const updateComponent = async (newData) => {
+  toShowComponent.value = newData;
+
+  if (newData.currentPage === "findSolutionFor") {
+    const selected = newData.selectedSolutionFor;
+
+    try {
+      const module = await import(`./components/${selected}.vue`);
+      dynamicComponent.value = module.default;
+    } catch (error) {
+      console.warn(`Component '${selected}.vue' not found. Loading fallback.`, error);
+
+      const fallbackModule = await import('./components/DefaultFallback.vue');
+
+      // Use h() to dynamically pass props
+      dynamicComponent.value = h(fallbackModule.default, { missingPage: selected });
+    }
+  } else {
+    dynamicComponent.value = null;
+  }
+};
 
 
 const toShowComponent = ref({
@@ -40,29 +68,6 @@ let findSolutionForItemPage = ref("");
 
 const fallbackComponent = () => import('./components/DefaultFallback.vue');
 
-const dynamicComponent = shallowRef(null); // This will hold the imported .vue component
-
-const updateComponent = async (newData) => {
-  toShowComponent.value = newData;
-
-  if (newData.currentPage === "findSolutionFor") {
-    const selected = newData.selectedSolutionFor;
-
-    try {
-      // Try importing the selected component
-      const module = await import(`./components/${selected}.vue`);
-      dynamicComponent.value = module.default;
-    } catch (error) {
-      console.warn(`Component '${selected}.vue' not found. Loading fallback.`, error);
-
-      // Fallback component
-      const fallbackModule = await fallbackComponent();
-      dynamicComponent.value = fallbackModule.default;
-    }
-  } else {
-    dynamicComponent.value = null;
-  }
-};
 
 // it get triggered whenever there is change on click on any heading in the navlink.vue
 // const updateComponent = async(newData) => {

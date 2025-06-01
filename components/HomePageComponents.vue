@@ -25,7 +25,7 @@
 
   </div>
   
-  <FooterInHomePage />
+  
 </template>
 
 <script setup>
@@ -36,5 +36,5 @@ import CoursesInHomePage from "./CoursesInHomePage.vue";
 import NavBarFooterInHomePage from "./NavBarFooterInHomePage.vue";
 import FindSolutionsCards from "./FindSolutionsCards.vue";
 import ConnectWithUsComponent from "./ConnectWithUsComponent.vue";
-import FooterInHomePage from "./FooterInHomePage.vue";
+
 </script>
