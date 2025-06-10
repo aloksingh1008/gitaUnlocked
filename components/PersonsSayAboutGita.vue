@@ -32,7 +32,7 @@
             When I read the <span class="text-orange-600 font-semibold">Bhagavad-Gita</span> and reflect about how God created this universe everything else seems so superfluous
           </p>
           <div class="flex items-center mt-auto">
-            <img src="/1.svg" alt="Albert Einstein" class="w-10 h-10 rounded-full mr-3" />
+            <img src="/Albert.svg" alt="Albert Einstein" class="w-10 h-10 rounded-full mr-3" />
             <span class="font-semibold text-gray-800">— Albert Einstein</span>
           </div>
         </div>
@@ -43,7 +43,7 @@
             When doubts haunt me, when disappointments stare me in the face, and I see not one ray of hope on the horizon, I turn to <span class="text-orange-600 font-semibold">Bhagavad-Gita</span>
           </p>
           <div class="flex items-center mt-auto">
-            <img src="/1.svg" alt="Mahatma Gandhi" class="w-10 h-10 rounded-full mr-3" />
+            <img src="/Gandhi.svg" alt="Mahatma Gandhi" class="w-10 h-10 rounded-full mr-3" />
             <span class="font-semibold text-gray-800">— Mahatma Gandhi</span>
           </div>
         </div>
@@ -54,7 +54,7 @@
             The <span class="text-orange-600 font-semibold">Bhagavad-Gita</span> is the most systematic statement of spiritual evolution of endowing value to mankind
           </p>
           <div class="flex items-center mt-auto">
-            <img src="/1.svg" alt="Aldous Huxley" class="w-10 h-10 rounded-full mr-3" />
+            <img src="/Aldous.svg" alt="Aldous Huxley" class="w-10 h-10 rounded-full mr-3" />
             <span class="font-semibold text-gray-800">— Aldous Huxley</span>
           </div>
         </div>
@@ -65,7 +65,7 @@
             In the morning I bathe my intellect in the stupendous and cosmogonal philosophy of the <span class="text-orange-600 font-semibold">Bhagavad-Gita</span>
           </p>
           <div class="flex items-center mt-auto">
-            <img src="/1.svg" alt="H.D Thoreau" class="w-10 h-10 rounded-full mr-3" />
+            <img src="/hud.svg" alt="H.D Thoreau" class="w-10 h-10 rounded-full mr-3" />
             <span class="font-semibold text-gray-800">— H.D Thoreau</span>
           </div>
         </div>
