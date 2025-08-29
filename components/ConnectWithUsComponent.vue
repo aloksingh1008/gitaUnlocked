@@ -3,27 +3,51 @@
       
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center">
         <div class="w-[85%]">
-            <h2 class="text-6xl font-bold text-pink-600 mb-6 p-x-12">CONNECT WITH US</h2>
-            <div class="bg-white">
-          <div class="mb-4 pt-4 px-4">
-            <input type="text" id="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-100" placeholder="NAME">
-          </div>
+          <h2 class="text-6xl font-bold text-pink-600 mb-6">CONNECT WITH US</h2>
+          <form @submit.prevent="submitForm" class="bg-white">
+      
+          <!-- Name -->
+            <div class="mb-4 pt-4 px-4">
+              <input
+                v-model="form.name"
+                type="text"
+                required
+                placeholder="NAME"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-100"/>
+            </div>
+
+          <!-- WhatsApp Number -->
           <div class="mb-4 px-4">
-            <input type="text" id="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-100" placeholder="WHATSAPP NUMBER">
+            <input
+              v-model="form.whatsapp"
+              type="text"
+              required
+              placeholder="WHATSAPP NUMBER"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-100"
+            />
           </div>
+          <!-- Query -->
           <div class="px-4 pb-2">
-            <textarea id="query" rows="3" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-100" placeholder="QUERY"></textarea>
+            <textarea
+              v-model="form.query"
+              rows="3"
+              required
+              placeholder="QUERY"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-100"
+            ></textarea>
           </div>
+
+          <!-- Submit -->
           <div class="flex justify-end px-4 py-4">
-
-          <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
-            SUBMIT
-
-        </button>
-    </div>
-
-        </div>
-        </div>
+            <button
+              type="submit"
+              class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            >
+              SUBMIT
+            </button>
+          </div>
+        </form>
+      </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div class="mb-6">
             <div class="flex items-center mb-2">
@@ -33,7 +57,7 @@
               <h3 class="text-lg font-semibold text-gray-700">Email</h3>
             </div>
             <p class="text-gray-600 text-sm mb-1">Our friendly team is here to help.</p>
-            <p class="text-pink-600 text-sm">hello@pawsnplay.com</p>
+            <p class="text-pink-600 text-sm">gitaunlocked@gmail.com</p>
           </div>
           <div class="mb-6">
             <div class="flex items-center mb-2">
@@ -42,8 +66,8 @@
               </svg>
               <h3 class="text-lg font-semibold text-gray-700">Live chat</h3>
             </div>
-            <p class="text-gray-600 text-sm mb-1">Our friendly team is here to help.</p>
-            <p class="text-pink-600 text-sm">Start new chat</p>
+            <p class="text-gray-600 text-sm mb-1">You can chat in WhatsApp at</p>
+            <p class="text-pink-600 text-sm">+91 81256 30802</p>
           </div>
           <div class="mb-6">
             <div class="flex items-center mb-2">
@@ -53,7 +77,7 @@
               <h3 class="text-lg font-semibold text-gray-700">Office</h3>
             </div>
             <p class="text-gray-600 text-sm mb-1">Come say hello at our office HQ.</p>
-            <p class="text-gray-700 text-sm">123, Yaya Abatan st, Ogba Lagos.</p>
+            <p class="text-gray-700 text-sm">Kalyanpur, Kanpur UP</p>
           </div>
           <div>
             <div class="flex items-center mb-2">
@@ -62,16 +86,34 @@
               </svg>
               <h3 class="text-lg font-semibold text-gray-700">Phone</h3>
             </div>
-            <p class="text-gray-600 text-sm mb-1">Mon-Fri from 8am to 5pm.</p>
-            <p class="text-pink-600 text-sm">+234 901234 384</p>
+            <p class="text-gray-600 text-sm mb-1">Mon-Fri from 10am to 5pm.</p>
+            <p class="text-pink-600 text-sm">+91 81256 30802</p>
           </div>
         </div>
       </div>
     </div>
   </template>
   
-  <script>
-  export default {
-    name: 'ConnectWithUs'
+<script setup>
+import db from "../src/firebase/init";   // ✅ your firebase config file
+import { collection, addDoc } from "firebase/firestore";
+
+const form = reactive({
+  name: "",
+  whatsapp: "",
+  query: ""
+});
+
+async function submitForm() {
+  try {
+    await addDoc(collection(db, "connectRequests"), form);
+    alert("✅ Your request has been submitted!");
+    form.name = "";
+    form.whatsapp = "";
+    form.query = "";
+  } catch (err) {
+    console.error("Firestore error:", err);
+    alert("❌ Failed to submit");
   }
+}
   </script>
