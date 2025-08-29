@@ -9,9 +9,6 @@
           <a href="#" class="text-gray-700 hover:text-pink-500">HOME</a>
         </li>
         <li class="mb-2">
-          <a href="#" class="text-gray-700 hover:text-pink-500">FIND SOLUTION FOR..</a>
-        </li>
-        <li class="mb-2">
           <a href="#" class="text-gray-700 hover:text-pink-500">COURSES</a>
         </li>
         <li>
