@@ -11,7 +11,7 @@
       class="text-gray-700 hover:text-blue-500 transition relative pointer"
       @click.prevent="isOpen = !isOpen"
     >
-      FIND SOLUTION FOR
+      FIND SOLUTION FOR...
     </a>
 
     <!-- Dropdown -->
