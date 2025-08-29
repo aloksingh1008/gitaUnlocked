@@ -1,1 +1,1 @@
-export { default } from "file:///Users/apple/Desktop/gitaUnlocked/node_modules/@nuxt/vite-builder/dist/runtime/vite-node.mjs"
+export { default } from "file:///C:/Users/mvlakshman129/Desktop/gitaUnlocked/node_modules/@nuxt/vite-builder/dist/runtime/vite-node.mjs"

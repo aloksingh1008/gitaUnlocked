@@ -1,9 +1,9 @@
 {
-  "_hash": "8igKdWCNmuXnQwiWoYDRxtpKwpCMfNJwalP00gQigxU",
+  "_hash": "8xuqIxJ2WwvAmkQMqLlxvy3w4rsabRhtl4OFULMWECs",
   "project": {
-    "rootDir": "/Users/apple/Desktop/gitaUnlocked"
+    "rootDir": "C:/Users/mvlakshman129/Desktop/gitaUnlocked"
   },
   "versions": {
-    "nuxt": "3.16.0"
+    "nuxt": "3.17.7"
   }
 }

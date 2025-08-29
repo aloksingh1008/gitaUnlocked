@@ -29,24 +29,25 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-gray-700 text-base md:text-lg">
         <ul>
-          <li class="mb-1">&bull; True Success</li>
-          <li class="mb-1">&bull; Real "I"</li>
-          <li class="mb-1">&bull; The Ultimate Genius</li>
-          <li class="mb-1">&bull; Manual of Life</li>
-          <li class="mb-1">&bull; Decode Your Struggles</li>
+          <li class="mb-1">&bull; SUTRA 1: True Success</li>
+          <li class="mb-1">&bull; SUTRA 2: Real "I"</li>
+          <li class="mb-1">&bull; SUTRA 3: The Ultimate Genius</li>
+          <li class="mb-1">&bull; SUTRA 4: Manual of Life</li>
+          <li class="mb-1">&bull; SUTRA 5: Decode Your Struggles</li>
         </ul>
         <ul>
-          <li class="mb-1">&bull; Success Mantra</li>
-          <li class="mb-1">&bull; Love That Heals</li>
-          <li class="mb-1">&bull; The Better World</li>
-          <li class="mb-1">&bull; Unity and Happiness</li>
+          <li class="mb-1">&bull; SUTRA 6: Success Mantra</li>
+          <li class="mb-1">&bull; SUTRA 7: Love That Heals</li>
+          <li class="mb-1">&bull; SUTRA 8: The Better World</li>
+          <li class="mb-1">&bull; SUTRA 9: Unity and Happiness</li>
         </ul>
       </div>
 
       <div class="flex items-center justify-start mt-8">
-        <button class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition duration-300 ease-in-out text-lg">
+        <a href="#" @click="$emit('goToCourse')">
+        <button  class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition duration-300 ease-in-out text-lg">
           ENROLL NOW !!
-        </button>
+        </button></a>
 
         <a href="#" class="ml-4 text-red-600 hover:text-red-700">
           <svg class="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
@@ -60,11 +61,14 @@
 
 </template>
 
-<script>
-export default {
-  name: 'SuccessSutrasCard',
+<script setup>
+//export default {
+  //name: 'SuccessSutrasCard',
   // No script logic needed for this component, it's purely presentational
-}
+//}
+
+defineEmits(["goToCourse"])
+
 </script>
 
 <style scoped>

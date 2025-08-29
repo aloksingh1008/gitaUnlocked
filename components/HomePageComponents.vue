@@ -15,10 +15,7 @@
   
   <GreatPersonalitiesSayAboutGita />
 
-  <CoursesInHomePage />
-
-  <NavBarFooterInHomePage />
-
+  <CoursesInHomePage @goToCourse="$emit('goToCourse')" />
 
   <div class="h-[28rem] z-20">
     <ConnectWithUsComponent />
@@ -36,5 +33,5 @@ import CoursesInHomePage from "./CoursesInHomePage.vue";
 import NavBarFooterInHomePage from "./NavBarFooterInHomePage.vue";
 import FindSolutionsCards from "./FindSolutionsCards.vue";
 import ConnectWithUsComponent from "./ConnectWithUsComponent.vue";
-
+defineEmits(["goToCourse"])
 </script>
