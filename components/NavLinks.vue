@@ -11,7 +11,7 @@
       class="text-gray-700 hover:text-blue-500 transition relative pointer"
       @click.prevent="isOpen = !isOpen"
     >
-      FIND SOLUTION FOR...
+      FIND SOLUTION FOR... &#9660;
     </a>
 
     <!-- Dropdown -->
@@ -77,9 +77,15 @@ const isOpen = ref(false)
 const selected = ref('')
 const items = ref([
   'Depression',
-  'Anxiety',
-  'Sleeplessness',
-  'Overthinking'
+  'Relationships',
+  'Sleep',
+  'Stress',
+  'Addiction',
+  'Overthinking',
+  'Loneliness',
+  'Anger',
+  'Greed',
+  'Laziness'
 ])
 
 const selectItem = (item) => {

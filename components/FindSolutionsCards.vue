@@ -44,7 +44,14 @@ import NewCard from "./NewCard.vue";
 const cards = ref([
   { title: 'Overthinking', description: 'The Hidden Enemy That Destorys Peace.' , image:"/2.svg"},
   { title: 'Anger', description: 'A Fire -- When uncontrolled, it burns who holds it.', image:"/1.svg" },
-  { title: 'Loneliness', description: 'When Hearts Drifts furthers Than Galaxies', image:"/3.svg" }
+  { title: 'Loneliness', description: 'When Hearts Drifts furthers Than Galaxies', image:"/3.svg" },
+  { title: 'Laziness', description: `It's Not You — It's the Mode You're In.` , image:"/2.svg"},
+  { title: 'Greed', description: 'The Hidden Enemy That Destroys Peace.', image:"/1.svg" },
+  { title: 'Depression', description: 'The Darkness Within.', image:"/3.svg" },
+  { title: 'Stress', description: 'Finding the Eye of the Storm.' , image:"/2.svg"},
+  { title: 'Sleep', description: 'Restful Pause or Regressive Escape?', image:"/1.svg" },
+  { title: 'Addiction', description: 'A Battle for Our Consciousness.', image:"/3.svg" },
+  { title: 'Relationships', description: 'A Guide to Love, Respect, and Stability.' , image:"/2.svg"}
   // { title: 'Burnout', description: 'Signs and solutions for burnout.', image:"/1.svg" },
   // { title: 'Insomnia', description: 'Sleep better with these tips.', image:"/1.svg" },
 ])
