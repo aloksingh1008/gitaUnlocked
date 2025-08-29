@@ -115,22 +115,22 @@
       <!-- Course Details with Icons -->
       <div class="space-y-6 text-2xl">
         <div class="flex items-center space-x-3">
-          <img :src="ClockIcon" alt="Clock" class="w-8 h-8" />
+          <img src="/CP11.svg" alt="Clock" class="w-8 h-8" />
           <span>{{ course.totalTime }}</span>
         </div>
 
         <div class="flex items-center space-x-3">
-          <img :src="TimePerWeekIcon" alt="Clock" class="w-8 h-8" />
+          <img src="/CP22.svg" alt="Clock" class="w-8 h-8" />
           <span>{{ course.timePerWeek }}</span>
         </div>
 
         <div class="flex items-center space-x-3">
-          <img :src="TagIcon" alt="Level" class="w-8 h-8" />
+          <img src="/CP33.svg" alt="Level" class="w-8 h-8" />
           <span> {{ course.certificate }}</span>
         </div>
 
         <div class="flex items-center space-x-3">
-          <img :src="LevelIcon" alt="Language" class="w-8 h-8" />
+          <img src="/CP44.svg" alt="Language" class="w-8 h-8" />
           <span>{{ course.level }}</span>
         </div>
 
@@ -155,11 +155,6 @@
 </template>
 
 <script setup>
-// Import custom icons
-import LevelIcon from '@/public/CoursePageImg44.svg'
-import TimePerWeekIcon from '@/public/CoursePageImg22.svg'
-import ClockIcon from '@/public/CoursePageImg11.svg'
-import TagIcon from '@/public/CoursePageImg33.svg'
   defineEmits(["goToRegister"])
 </script>
 
