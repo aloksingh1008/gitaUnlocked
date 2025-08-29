@@ -1,19 +1,21 @@
 <template>
-  <Navbar />
-  <div class="bg-gradient-to-r from-blue-100 to-purple-200">
+  
+  <div>
     <NavLinks v-model="toShowComponent" @toShowComponentChanged="updateComponent" />
   </div>
   <div class="h-28">
 
   </div>
 
-  <HomePageComponents v-if="toShowComponent.currentPage === 'home'" />
+  <HomePageComponents v-if="toShowComponent.currentPage === 'home'" @goToCourse="toShowComponent.currentPage = 'course'"/>
 
   <div v-if="toShowComponent.currentPage === 'findSolutionFor'" class="mx-16 px-4">
   <component :is="dynamicComponent" />
 </div>
 
   <AboutUs v-if="toShowComponent.currentPage === 'aboutus'" />
+  <CoursePage v-if="toShowComponent.currentPage === 'course'" @goToRegister="toShowComponent.currentPage = 'register'"/>
+  <RegistrationPage v-if="toShowComponent.currentPage === 'register'" />
   <FooterInHomePage />
 </template>
 
@@ -26,6 +28,8 @@ import db from './src/firebase/init.js'; // Ensure this file properly initialize
 import NavLinks from "./components/NavLinks.vue";
 import HomePageComponents from "./components/HomePageComponents.vue";
 import FooterInHomePage from "./components/FooterInHomePage.vue";
+import CoursePage from "./components/CoursePage.vue";
+import RegistrationPage from "./components/RegistrationPage.vue";
 
 
 import { ref } from 'vue';
