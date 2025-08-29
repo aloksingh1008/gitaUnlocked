@@ -1,9 +1,13 @@
 <template>
+    <img src="/public/Laziness.png" alt="Article Image" class="article-image" />
+
   <div class="mt-8 space-y-6 text-gray-800 text-lg leading-relaxed px-2 md:px-4">
+    
     <!-- Title -->
     <h2 class="text-3xl font-extrabold text-[#FF7A00] uppercase">
       Laziness: It's Not You — It's the Mode You're In
     </h2>
+
 
     <!-- Section 1 -->
     <h3 class="text-2xl font-bold text-[#C700C1] mt-6">Why Do We Avoid What We Know We Must Do?</h3>
@@ -96,3 +100,12 @@
     </div>
   </div>
 </template>
+
+<style>
+.article-image {
+  width: 100%;         /* full width */
+  height: 700px;       /* reduce height */
+  object-fit: cover;   /* crop proportionally */
+}
+
+</style>

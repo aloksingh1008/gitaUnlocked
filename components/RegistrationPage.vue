@@ -65,61 +65,7 @@
       </div>
 
       <!-- Right Half (Form) -->
-<<<<<<< HEAD
-<div class="w-1/2 bg-white p-8 rounded-xl shadow-md">
-  <h3 class="text-2xl font-semibold mb-6">Registration Form</h3>
-  <form class="space-y-6" @submit.prevent="submitForm">
-    
-    <!-- Full Name -->
-    <div class="flex flex-col text-left">
-      <label class="mb-1 font-medium text-[#D61C75]">
-        Full Name <span class="text-red-500">(required)</span>
-      </label>
-      <input
-        v-model="form.fullName"
-        type="text"
-        required
-        class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
-      />
-    </div>
 
-    <!-- Phone Number -->
-    <div class="flex flex-col text-left">
-      <label class="mb-1 font-medium text-[#D61C75]">
-        Phone Number <span class="text-red-500">(required)</span>
-      </label>
-      <input
-        v-model="form.phone"
-        type="tel"
-        required
-        class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
-      />
-    </div>
-
-    <!-- Email -->
-    <div class="flex flex-col text-left">
-      <label class="mb-1 font-medium text-[#D61C75]">
-        Email ID <span class="text-red-500">(required)</span>
-      </label>
-      <input
-        v-model="form.email"
-        type="email"
-        required
-        class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
-      />
-    </div>
-
-    <!-- Referral Code -->
-    <div class="flex flex-col text-left">
-      <label class="mb-1 font-medium text-[#D61C75]">Referral Code
-        <span class="text-red-500">(if any)</span></label>
-      <input
-        v-model="form.referral"
-        type="text"
-        class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
-      />
-    </div>
-=======
       <div class="w-1/2 bg-white p-8 rounded-xl shadow-md">
         <h3 class="text-2xl font-semibold mb-6">Registration Form</h3>
         <form class="space-y-6" @submit.prevent="submitForm">
@@ -173,7 +119,6 @@
               class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
             />
           </div>
->>>>>>> d5aa632a (added the referal code logic and find solution for pages)
 
           <!-- Fees Section -->
           <div class="flex flex-col text-left text-lg font-semibold space-y-2">
@@ -205,33 +150,6 @@
   </div>
 </template>
 
-<<<<<<< HEAD
-
-<script setup>
-import db from "../src/firebase/init";  // <-- this will now work
-import { collection, addDoc } from "firebase/firestore";
-
-const form = reactive({
-  fullName: "",
-  phone: "",
-  email: "",
-  referral: ""
-});
-
-async function submitForm() {
-  try {
-    await addDoc(collection(db, "enrollments"), form);
-    alert("✅ Enrollment submitted!");
-    form.fullName = "";
-    form.phone = "";
-    form.email = "";
-    form.referral = "";
-  } catch (err) {
-    console.error("Firestore error:", err);
-    alert("❌ Failed to submit");
-  }
-}
-=======
 <script setup>
 import { reactive, computed } from "vue";
 
@@ -259,5 +177,4 @@ const total = computed(() => {
 const submitForm = () => {
   alert(`Form submitted! Total paid: ₹${total.value}`);
 };
->>>>>>> d5aa632a (added the referal code logic and find solution for pages)
 </script>

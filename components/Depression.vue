@@ -1,4 +1,6 @@
 <template>
+    <img src="/public/Depression.png" alt="Article Image" class="article-image" />
+
   <div class="mt-8 space-y-6 text-gray-800 text-lg leading-relaxed px-2 md:px-4">
     <!-- Title -->
     <h2 class="text-3xl font-extrabold text-[#FF7A00] uppercase">
@@ -104,3 +106,14 @@
     </div>
   </div>
 </template>
+
+
+
+<style>
+.article-image {
+  width: 100%;         /* full width */
+  height: 700px;       /* reduce height */
+  object-fit: cover;   /* crop proportionally */
+}
+
+</style>

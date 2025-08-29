@@ -1,5 +1,10 @@
 <template>
+    <img src="/public/Addiction.png" alt="Article Image" class="article-image" />
+
   <div class="mt-8 space-y-6 text-gray-800 text-lg leading-relaxed px-2 md:px-4">
+    <img src="/public/Laziness.png" alt="Article Image" class="article-image" />
+
+
     <!-- Title -->
     <h2 class="text-3xl font-extrabold text-[#FF7A00] uppercase">
       Addiction: A Battle for Our Consciousness
@@ -95,3 +100,13 @@
     <p class="text-xl font-bold text-center text-[#FF7A00] mt-6">Gita Unlocked: Where Freedom from Illusion Begins.</p>
   </div>
 </template>
+
+
+<style>
+.article-image {
+  width: 100%;         /* full width */
+  height: 700px;       /* reduce height */
+  object-fit: cover;   /* crop proportionally */
+}
+
+</style>
