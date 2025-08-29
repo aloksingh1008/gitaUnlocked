@@ -151,6 +151,8 @@
 </template>
 
 <script setup>
+import db from "../src/firebase/init";
+import { collection, addDoc } from "firebase/firestore";
 import { reactive, computed } from "vue";
 
 const form = reactive({
@@ -174,7 +176,22 @@ const total = computed(() => {
   return 500 - discount.value;
 });
 
-const submitForm = () => {
-  alert(`Form submitted! Total paid: ₹${total.value}`);
-};
+async function submitForm() {
+  // Also Call Payment Page.
+  // Get Response from Payment Page.
+  try {
+    await addDoc(collection(db, "enrollments"), form);
+    alert("✅ Enrollment submitted!");
+    form.fullName = "";
+    form.phone = "";
+    form.email = "";
+    form.referral = "";
+  } catch (err) {
+    console.error("Firestore error:", err);
+    alert("❌ Failed to submit");
+  }
+}
+// const submitForm = () => {
+//   alert(`Form submitted! Total paid: ₹${total.value}`);
+// };
 </script>
