@@ -1,4 +1,5 @@
 <template>
+  <div class="max-w-5xl mx-auto mt-16 pt-10 px-2 sm:px-4 lg:px-6">
     <img src="/public/Stress.png" alt="Article Image" class="article-image" />
 
   <div class="mt-8 space-y-6 text-gray-800 text-lg leading-relaxed px-2 md:px-4">
@@ -58,15 +59,17 @@
       <p class="mt-2 font-semibold text-green-700">🌱 Join our course. Remove the root. Unlock a stress-free life.</p>
     </div>
   </div>
+</div>
 </template>
 
 
 
 <style>
 .article-image {
-  width: 100%;         /* full width */
-  height: 700px;       /* reduce height */
-  object-fit: cover;   /* crop proportionally */
+  width: 100%;
+  height: auto;          /* ✅ auto height for mobile */
+  max-height: 70vh;      /* ✅ keep images from being too tall */
+  object-fit: cover;     /* crop proportionally */
+  border-radius: 12px;
 }
-
 </style>

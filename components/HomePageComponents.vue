@@ -192,13 +192,6 @@
 
   <!-- Testimonials Section -->
   <div class="bg-white py-8 sm:py-12 md:py-16">
-    <div
-      class="text-center text-[#D61C75] font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl uppercase mb-8 sm:mb-12 px-4"
-    >
-      what great personalities say about GITA
-    </div>
-
-    
     <section class="bg-white py-12 sm:py-16">
     <!-- Heading -->
     <div class="text-center px-4">
