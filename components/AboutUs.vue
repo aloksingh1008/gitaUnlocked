@@ -27,6 +27,56 @@
           <li>🔍 To go beyond superficial interpretations and uncover its original transcendental purpose.</li>
         </ul>
       </div>
+
+            <!-- Meet Our Team Section -->
+      <div class="max-w-5xl mx-auto mt-12 bg-white p-8 shadow-lg rounded-lg">
+        <h2 class="text-3xl font-bold text-gray-800 text-center">MEET OUR TEAM</h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-8 text-center">
+          <!-- Team Member 1 -->
+          <div class="flex flex-col items-center">
+            <img src="/Srinivas_Pr.jpg" alt="Team Member" class="w-32 h-32 rounded-full object-cover shadow-md">
+            <h3 class="mt-4 text-xl font-semibold text-gray-800">Kandula Srinivas</h3>
+            <p class="text-gray-600">IIT BHU</p>
+          </div>
+
+          <!-- Team Member 2 -->
+          <div class="flex flex-col items-center">
+            <img src="/Chandra_Mohan_Pr.jpg" alt="Team Member" class="w-32 h-32 rounded-full object-cover shadow-md">
+            <h3 class="mt-4 text-xl font-semibold text-gray-800">Chandra Mohan</h3>
+            <p class="text-gray-600">IIT Madras</p>
+          </div>
+
+          <!-- Team Member 3 -->
+          <div class="flex flex-col items-center">
+            <img src="/AGP.jpg" alt="Team Member" class="w-32 h-32 rounded-full object-cover shadow-md">
+            <h3 class="mt-4 text-xl font-semibold text-gray-800">Aman Gandhi</h3>
+            <p class="text-gray-600">IIT BHU</p>
+          </div>
+
+          <!-- Team Member 4 -->
+          <div class="flex flex-col items-center">
+            <img src="/Sankalp_D_Pr_2.png" alt="Team Member" class="w-32 h-32 rounded-full object-cover shadow-md">
+            <h3 class="mt-4 text-xl font-semibold text-gray-800">Sankalp Dwivedi</h3>
+            <p class="text-gray-600">IIT Delhi</p>
+          </div>
+
+          <!-- Team Member 5 -->
+          <div class="flex flex-col items-center">
+            <img src="/Aman_T_Pr.jpg" alt="Team Member" class="w-32 h-32 rounded-full object-cover shadow-md">
+            <h3 class="mt-4 text-xl font-semibold text-gray-800">Aman Tiwari</h3>
+            <p class="text-gray-600">IIT BHU</p>
+          </div>
+
+          <!-- Team Member 6 -->
+          <div class="flex flex-col items-center">
+            <img src="/Lakshman.jpg" alt="Team Member" class="w-32 h-32 rounded-full object-cover shadow-md">
+            <h3 class="mt-4 text-xl font-semibold text-gray-800">Sri Ram</h3>
+            <p class="text-gray-600">IIT Kharagpur</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </template>
   
