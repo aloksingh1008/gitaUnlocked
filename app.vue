@@ -1,23 +1,39 @@
 <template>
-  
-  <div>
+  <div class="flex flex-col min-h-screen">
+    <!-- Navbar -->
     <NavLinks v-model="toShowComponent" @toShowComponentChanged="updateComponent" />
+
+    <!-- Main Content (takes remaining space) -->
+    <div class="flex-1">
+      <HomePageComponents
+        v-if="toShowComponent.currentPage === 'home'"
+        @goToCourse="toShowComponent.currentPage = 'course'"
+      />
+
+      <div v-if="toShowComponent.currentPage === 'findSolutionFor'" class="mx-16 px-4">
+        <component :is="dynamicComponent" />
+      </div>
+
+      <AboutUs v-if="toShowComponent.currentPage === 'aboutus'" />
+
+      <CoursePage
+        v-if="toShowComponent.currentPage === 'course'"
+        @goToRegister="toShowComponent.currentPage = 'register'"
+      />
+
+      <RegistrationPage v-if="toShowComponent.currentPage === 'register'" />
+    </div>
+
+    <!-- Footer (always at bottom, never overlaps) -->
+    <FooterInHomePage />
   </div>
-  <div class="h-28">
-
-  </div>
-
-  <HomePageComponents v-if="toShowComponent.currentPage === 'home'" @goToCourse="toShowComponent.currentPage = 'course'"/>
-
-  <div v-if="toShowComponent.currentPage === 'findSolutionFor'" class="mx-16 px-4">
-  <component :is="dynamicComponent" />
-</div>
-
-  <AboutUs v-if="toShowComponent.currentPage === 'aboutus'" />
-  <CoursePage v-if="toShowComponent.currentPage === 'course'" @goToRegister="toShowComponent.currentPage = 'register'"/>
-  <RegistrationPage v-if="toShowComponent.currentPage === 'register'" />
-  <FooterInHomePage />
 </template>
+
+<style scoped>
+main {
+  padding-bottom: 2rem; /* ensures spacing above footer */
+}
+</style>
 
 <script setup>
 import Navbar from "./components/Navbar.vue";
