@@ -49,9 +49,9 @@
 
           <!-- Team Member 3 -->
           <div class="flex flex-col items-center">
-            <img src="/AGP.jpg" alt="Team Member" class="w-32 h-32 rounded-full object-cover shadow-md">
-            <h3 class="mt-4 text-xl font-semibold text-gray-800">Aman Gandhi</h3>
-            <p class="text-gray-600">IIT BHU</p>
+            <img src="/Deepak.jpg" alt="Team Member" class="w-32 h-32 rounded-full object-cover shadow-md">
+            <h3 class="mt-4 text-xl font-semibold text-gray-800">Deepak Kumar</h3>
+            <p class="text-gray-600">IIT Dhanbad</p>
           </div>
 
           <!-- Team Member 4 -->
