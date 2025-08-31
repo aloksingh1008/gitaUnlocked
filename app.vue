@@ -10,7 +10,7 @@
         @goToCourse="toShowComponent.currentPage = 'course'"
       />
 
-      <div v-if="toShowComponent.currentPage === 'findSolutionFor'" class="mx-16 px-4">
+      <div v-if="toShowComponent.currentPage === 'findSolutionFor'" class="px-2">
         <component :is="dynamicComponent" />
       </div>
 

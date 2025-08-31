@@ -1,7 +1,7 @@
 <template>
   <nav class="fixed flex justify-between items-center w-full top-0 left-0 bg-white z-50 px-4 py-2 shadow-md">
     <!-- Logo -->
-    <img src="/logo2.png" alt="Logo" class="w-28 sm:w-36 h-12 sm:h-14 mx-4 sm:mx-8" />
+    <img src="/public/logo2.png" alt="Logo" class="w-28 sm:w-36 h-12 sm:h-14 mx-4 sm:mx-8" />
 
     <!-- Desktop Menu -->
     <ul class="hidden md:flex space-x-10 lg:space-x-16 text-lg font-medium items-center">
@@ -9,34 +9,32 @@
         <a href="#" class="text-gray-700 hover:text-blue-500 transition" @click="onTabClick('home')">HOME</a>
       </li>
 
-      <li class="relative">
-        <a
-          href="#"
-          class="text-gray-700 hover:text-blue-500 transition relative pointer"
-          @click.prevent="isOpen = !isOpen"
+      <!-- Fixed dropdown: no gap + hover safe -->
+      <li class="relative group">
+        <button
+          class="text-gray-700 hover:text-blue-500 transition font-medium focus:outline-none flex items-center"
+          type="button"
         >
-          FIND SOLUTION FOR... &#9660;
-        </a>
+          FIND SOLUTION FOR...
+          <span class="ml-1">&#9660;</span>
+        </button>
 
         <!-- Dropdown -->
-        <div
-          v-if="isOpen"
-          class="absolute z-10 mt-2 w-56 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5"
+        <ul
+          class="absolute left-0 top-full -mt-px w-56 bg-white border rounded-md shadow-lg
+                 opacity-0 invisible pointer-events-none
+                 group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto
+                 transition duration-150 ease-out z-20"
         >
-          <ul class="py-2">
-            <li
-              v-for="(item, index) in items"
-              :key="index"
-              @click="selectItem(item)"
-              class="block px-4 py-2 text-center text-black hover:bg-gray-100 cursor-pointer"
-              :class="{
-                'underline text-blue-600 font-semibold': item === selected && index === 0,
-              }"
-            >
-              {{ item }}
-            </li>
-          </ul>
-        </div>
+          <li
+            v-for="(item, index) in items"
+            :key="index"
+            @click="selectItem(item)"
+            class="block px-4 py-2 text-center text-black hover:bg-gray-100 cursor-pointer"
+          >
+            {{ item }}
+          </li>
+        </ul>
       </li>
 
       <li>
@@ -52,7 +50,7 @@
 
     <!-- Mobile Hamburger -->
     <div class="md:hidden">
-      <button @click="mobileOpen = !mobileOpen" class="focus:outline-none">
+      <button @click="mobileOpen = !mobileOpen" class="focus:outline-none" type="button">
         <svg
           v-if="!mobileOpen"
           class="w-7 h-7 text-gray-700"
@@ -124,10 +122,8 @@ const handleClick = (toRoute, subItem) => {
 };
 
 // States
-const isOpen = ref(false);          // Desktop dropdown
 const isOpenMobile = ref(false);    // Mobile dropdown
 const mobileOpen = ref(false);      // Mobile menu toggle
-const selected = ref('');
 const items = ref([
   'Depression',
   'Relationships',
@@ -143,7 +139,6 @@ const items = ref([
 
 // Close menus when selecting an item
 const selectItem = (item) => {
-  isOpen.value = false;
   isOpenMobile.value = false;
   mobileOpen.value = false;
   handleClick('findSolutionFor', item);
@@ -151,13 +146,8 @@ const selectItem = (item) => {
 
 // Close menus when clicking any tab
 const onTabClick = (toRoute) => {
-  isOpen.value = false;
   isOpenMobile.value = false;
   mobileOpen.value = false;
   handleClick(toRoute);
 };
 </script>
-
-<style scoped>
-/* Optional: smooth animations for dropdowns */
-</style>
