@@ -18,10 +18,11 @@
 
       <CoursePage
         v-if="toShowComponent.currentPage === 'course'"
-        @goToRegister="toShowComponent.currentPage = 'register'"
-      />
+        @goToRegister="toShowComponent.currentPage = 'register'"/>
 
       <RegistrationPage v-if="toShowComponent.currentPage === 'register'" />
+
+      <ConnectWithUsComponent v-if="toShowComponent.currentPage === 'qa'" class="pt-20"/>
     </div>
 
     <!-- Footer (always at bottom, never overlaps) -->
@@ -46,6 +47,7 @@ import HomePageComponents from "./components/HomePageComponents.vue";
 import FooterInHomePage from "./components/FooterInHomePage.vue";
 import CoursePage from "./components/CoursePage.vue";
 import RegistrationPage from "./components/RegistrationPage.vue";
+import ConnectWithUsComponent from "./components/ConnectWithUsComponent.vue";
 
 
 import { ref } from 'vue';
