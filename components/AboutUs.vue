@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-gray-100 min-h-screen py-12 px-6">
+    <div class="bg-gray-100 min-h-screen pt-20 py-12 px-6">
       <div class="max-w-4xl mx-auto text-center">
         <h1 class="text-4xl font-bold text-gray-800">ABOUT US - Gita Unlocked</h1>
         <p class="text-lg text-gray-600 mt-2 italic">

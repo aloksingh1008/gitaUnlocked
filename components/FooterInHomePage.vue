@@ -60,7 +60,7 @@
 
   <!-- Gradient Bar -->
   <div class="w-full flex justify-center items-center shadow-md tracking-[0.2em] px-4 py-3 font-bold text-base md:text-xl lg:text-2xl bg-gradient-to-r from-[#FF7A00] via-[#D61C75] to-[#7A10FF] text-white">
-    © 2025 Gita Unlocked
+    Copyright © 2025 Gita Unlocked - All Rights Reserved.
   </div>
 
   <!-- Spacer -->
