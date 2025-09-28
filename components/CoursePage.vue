@@ -87,11 +87,11 @@
 
       <!-- Join Button -->
       <div class="pt-4">
-        <a href="#" @click="$emit('goToRegister')">
+        <NuxtLink to="/register">
           <button class="bg-[#D61C75] hover:bg-[#7A00FF] text-white font-bold text-xl md:text-3xl py-2 px-6 rounded">
             REGISTER
           </button>
-        </a>
+        </NuxtLink>
       </div>
     </div>
   </div>
@@ -102,7 +102,6 @@
 
 <script setup>
   const leftBg = "/background_left.png"
-  defineEmits(["goToRegister"])
 </script>
 
 <script>

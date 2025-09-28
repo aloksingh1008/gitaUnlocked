@@ -1,12 +1,14 @@
 <template>
   <nav class="fixed flex justify-between items-center w-full top-0 left-0 bg-white z-50 px-4 py-2 shadow-md">
     <!-- Logo -->
-    <img src="/public/logo2.png" alt="Logo" class="w-28 sm:w-36 h-12 sm:h-14 mx-4 sm:mx-8" />
+    <NuxtLink to="/">
+      <img src="/public/logo2.png" alt="Logo" class="w-28 sm:w-36 h-12 sm:h-14 mx-4 sm:mx-8" />
+    </NuxtLink>
 
     <!-- Desktop Menu -->
     <ul class="hidden md:flex space-x-10 lg:space-x-16 text-lg font-medium items-center">
       <li>
-        <a href="#" class="text-gray-700 hover:text-blue-500 transition" @click="onTabClick('home')">HOME</a>
+        <NuxtLink to="/" class="text-gray-700 hover:text-blue-500 transition">HOME</NuxtLink>
       </li>
 
       <!-- Fixed dropdown: no gap + hover safe -->
@@ -38,13 +40,13 @@
       </li>
 
       <li>
-        <a href="#" class="text-gray-700 hover:text-blue-500 transition" @click="onTabClick('course')">COURSES</a>
+        <NuxtLink to="/courses" class="text-gray-700 hover:text-blue-500 transition">COURSES</NuxtLink>
       </li>
       <li>
-        <a href="#" class="text-gray-700 hover:text-blue-500 transition" @click="onTabClick('qa')">CONNECT WITH US</a>
+        <NuxtLink to="/contact" class="text-gray-700 hover:text-blue-500 transition">CONNECT WITH US</NuxtLink>
       </li>
       <li>
-        <a href="#" class="text-gray-700 hover:text-blue-500 transition" @click="onTabClick('aboutus')">ABOUT US</a>
+        <NuxtLink to="/about" class="text-gray-700 hover:text-blue-500 transition">ABOUT US</NuxtLink>
       </li>
     </ul>
 
@@ -80,7 +82,7 @@
       class="absolute top-16 left-0 w-full bg-white shadow-md rounded-b-lg md:hidden"
     >
       <ul class="flex flex-col space-y-4 px-6 py-4 text-lg font-medium">
-        <li><a href="#" class="text-gray-700 hover:text-blue-500 transition" @click="onTabClick('home')">HOME</a></li>
+        <li><NuxtLink to="/" class="text-gray-700 hover:text-blue-500 transition" @click="closeMobileMenu">HOME</NuxtLink></li>
         <li>
           <button @click="isOpenMobile = !isOpenMobile" class="w-full text-left text-gray-700 hover:text-blue-500 transition">
             FIND SOLUTION FOR... &#9660;
@@ -96,30 +98,16 @@
             </li>
           </ul>
         </li>
-        <li><a href="#" class="text-gray-700 hover:text-blue-500 transition" @click="onTabClick('course')">COURSES</a></li>
-        <li><a href="#" class="text-gray-700 hover:text-blue-500 transition" @click="onTabClick('connect')">CONNECT WITH US</a></li>
-        <li><a href="#" class="text-gray-700 hover:text-blue-500 transition" @click="onTabClick('aboutus')">ABOUT US</a></li>
+        <li><NuxtLink to="/courses" class="text-gray-700 hover:text-blue-500 transition" @click="closeMobileMenu">COURSES</NuxtLink></li>
+        <li><NuxtLink to="/contact" class="text-gray-700 hover:text-blue-500 transition" @click="closeMobileMenu">CONNECT WITH US</NuxtLink></li>
+        <li><NuxtLink to="/about" class="text-gray-700 hover:text-blue-500 transition" @click="closeMobileMenu">ABOUT US</NuxtLink></li>
       </ul>
     </div>
   </nav>
 </template>
 
 <script setup>
-import { defineProps, defineEmits, ref } from 'vue';
-
-const props = defineProps({
-  modelValue: Object
-});
-
-const emit = defineEmits(['update:modelValue', 'toShowComponentChanged']);
-
-const handleClick = (toRoute, subItem) => {
-  let internalData = { ...props.modelValue };
-  internalData.currentPage = toRoute;
-  internalData.selectedSolutionFor = subItem;
-  emit('update:modelValue', internalData);
-  emit('toShowComponentChanged', internalData);
-};
+import { ref } from 'vue';
 
 // States
 const isOpenMobile = ref(false);    // Mobile dropdown
@@ -141,13 +129,12 @@ const items = ref([
 const selectItem = (item) => {
   isOpenMobile.value = false;
   mobileOpen.value = false;
-  handleClick('findSolutionFor', item);
+  navigateTo(`/solutions/${item}`);
 };
 
-// Close menus when clicking any tab
-const onTabClick = (toRoute) => {
+// Close mobile menu
+const closeMobileMenu = () => {
   isOpenMobile.value = false;
   mobileOpen.value = false;
-  handleClick(toRoute);
 };
 </script>

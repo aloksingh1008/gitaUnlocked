@@ -66,13 +66,13 @@
         <div
           class="flex items-center justify-start mt-8 flex-wrap gap-4 sm:gap-6"
         >
-          <a href="#" @click="$emit('goToCourse')">
+          <NuxtLink to="/courses">
             <button
               class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 sm:py-3 px-6 sm:px-8 rounded-lg shadow-md transition duration-300 ease-in-out text-base sm:text-lg"
             >
               ENROLL NOW !!
             </button>
-          </a>
+          </NuxtLink>
 
           <a href="#" class="text-red-600 hover:text-red-700">
             <svg
@@ -92,5 +92,5 @@
 </template>
 
 <script setup>
-defineEmits(["goToCourse"]);
+// No longer need to emit events - using direct navigation
 </script>

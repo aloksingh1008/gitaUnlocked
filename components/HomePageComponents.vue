@@ -307,7 +307,7 @@
   </section>
   </div>
 
-  <CoursesInHomePage @goToCourse="$emit('goToCourse')" />
+  <CoursesInHomePage />
 
     <section class="bg-gray-100 py-10 px-4 sm:px-8 lg:px-12 rounded-lg shadow-md ">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
@@ -476,7 +476,7 @@ import CoursesInHomePage from "./CoursesInHomePage.vue";
 import NavBarFooterInHomePage from "./NavBarFooterInHomePage.vue";
 import FindSolutionsCards from "./FindSolutionsCards.vue";
 import ConnectWithUsComponent from "./ConnectWithUsComponent.vue";
-defineEmits(["goToCourse"])
+// No longer need to emit events - using direct navigation
 
 import NewCard from "./NewCard.vue";
 

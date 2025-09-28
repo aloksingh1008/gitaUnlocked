@@ -1,5 +1,12 @@
 <template>
-  <div class="min-h-screen bg-gray-50 pt-20 flex flex-col">
+  <!-- Show confirmation page if registration is successful -->
+  <RegistrationConfirmation 
+    v-if="showConfirmation" 
+    :enrollment-data="enrollmentData" 
+  />
+  
+  <!-- Show registration form otherwise -->
+  <div v-else class="min-h-screen bg-gray-50 pt-20 flex flex-col">
     <!-- Top Banner -->
     <div
       class="flex flex-col md:flex-row items-stretch items-center justify-center bg-white px-0 overflow-hidden relative"
@@ -132,18 +139,22 @@
               <span>-₹{{ discount }}</span>
             </div>
             <hr class="my-2 border-gray-300" />
-            <div class="flex justify-between">
+            <div class="flex justify-between" :class="total === 0 ? 'text-green-600 font-bold' : ''">
               <span>Total:</span>
-              <span>₹{{ total }}</span>
+              <span>{{ total === 0 ? 'FREE!' : `₹${total}` }}</span>
+            </div>
+            <div v-if="total === 0" class="text-sm text-green-600 font-normal">
+              🎉 Congratulations! You're eligible for free enrollment!
             </div>
           </div>
 
           <!-- Submit Button -->
           <button
             type="submit"
-            class="w-full bg-orange-600 text-white font-bold p-3 rounded-lg hover:bg-blue-700 transition"
+            :disabled="isSubmitting"
+            class="w-full bg-orange-600 text-white font-bold p-3 rounded-lg hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Enroll Now !!
+            {{ isSubmitting ? 'Processing...' : (total === 0 ? 'Enroll for FREE!' : 'Pay & Enroll Now!') }}
           </button>
         </form>
       </div>
@@ -154,7 +165,8 @@
 <script setup>
 import db from "../src/firebase/init";
 import { collection, addDoc } from "firebase/firestore";
-import { reactive, computed } from "vue";
+import { reactive, computed, ref } from "vue";
+import RegistrationConfirmation from "./RegistrationConfirmation.vue";
 
 const form = reactive({
   name: "",
@@ -163,9 +175,14 @@ const form = reactive({
   referral: "",
 });
 
+const showConfirmation = ref(false);
+const isSubmitting = ref(false);
+const enrollmentData = ref({});
+
 const referralDiscounts = {
-  GITA100: 100,
-  GITA200: 200,
+  IITP25_GU: 500,
+  IITBH25_GU: 500,
+  RGIPT25_GU: 500
 };
 
 const discount = computed(() => {
@@ -177,16 +194,44 @@ const total = computed(() => {
 });
 
 async function submitForm() {
+  isSubmitting.value = true;
+  
   try {
-    await addDoc(collection(db, "enrollments"), form);
-    alert("✅ Enrollment submitted!");
-    form.name = "";
-    form.phone = "";
-    form.email = "";
-    form.referral = "";
+    // Save enrollment data to Firebase
+    const enrollmentRecord = {
+      ...form,
+      total: total.value,
+      discount: discount.value,
+      timestamp: new Date().toISOString(),
+      status: total.value === 0 ? 'completed' : 'pending_payment'
+    };
+    
+    await addDoc(collection(db, "enrollments"), enrollmentRecord);
+    
+    // Store enrollment data for confirmation page
+    enrollmentData.value = enrollmentRecord;
+    
+    if (total.value === 0) {
+      // Free enrollment - show confirmation page
+      showConfirmation.value = true;
+    } else {
+      // Paid enrollment - redirect to Razorpay
+      window.open('https://rzp.io/rzp/Gita-Unlocked', '_blank');
+      
+      // Show success message
+      alert("✅ Registration submitted! Please complete payment to confirm your enrollment.");
+      
+      // Reset form
+      form.name = "";
+      form.phone = "";
+      form.email = "";
+      form.referral = "";
+    }
   } catch (err) {
     console.error("Firestore error:", err);
-    alert("❌ Failed to submit");
+    alert("❌ Failed to submit registration. Please try again.");
+  } finally {
+    isSubmitting.value = false;
   }
 }
 </script>
